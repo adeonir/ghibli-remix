@@ -1,9 +1,14 @@
-import { LoaderFunction, MetaFunction, useLoaderData } from 'remix'
+import { Form, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 import { Film, getFilms } from '~/api/films'
+import { Button } from '~/components/Button'
 import { Card } from '~/components/Card'
+import { Input } from '~/components/Input'
 
-export const loader: LoaderFunction = async () => {
-  return getFilms()
+export const loader: LoaderFunction = async ({ request }) => {
+  const url = new URL(request.url)
+  const title = url.searchParams.get('title') ?? ''
+
+  return getFilms(title)
 }
 
 export const meta: MetaFunction = () => {
@@ -17,11 +22,24 @@ export default function Index() {
   const films = useLoaderData<Film[]>()
 
   return (
-    <div className="mx-auto max-w-7xl space-y-12">
-      <div className="flex h-12 items-center">
+    <div className="mx-auto max-w-7xl">
+      <div className="mb-8 flex flex-col items-center justify-between space-y-4 text-center md:flex-row md:space-y-0 md:text-left">
         <h1 className="text-4xl font-bold text-pink-500">
           Studio Ghibli Films
         </h1>
+        <Form
+          method="get"
+          reloadDocument
+          className="flex flex-col gap-4 sm:flex-row"
+        >
+          <Input
+            type="text"
+            name="title"
+            placeholder="Type a title..."
+            className="h-12"
+          />
+          <Button className="h-12 px-8">Search</Button>
+        </Form>
       </div>
 
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
