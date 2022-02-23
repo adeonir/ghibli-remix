@@ -16,7 +16,11 @@ export const links: LinksFunction = () => {
 }
 
 export const meta: MetaFunction = () => {
-  return { title: 'New Remix App' }
+  return {
+    title: 'Studio Ghibli',
+    description:
+      'This is a fan page of Studio Ghilbli movies, developed with Remix.run',
+  }
 }
 
 export default function App() {
