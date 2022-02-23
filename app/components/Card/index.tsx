@@ -1,4 +1,5 @@
 import { Film } from '~/api/films'
+import { Button } from '~/components/Button'
 
 type Props = {
   film: Film
@@ -11,9 +12,7 @@ export const Card = ({ film }: Props) => {
 
       <div className="flex flex-1 flex-col justify-between space-y-4 p-6">
         <h2 className="text-xl font-bold text-slate-100">{film.title}</h2>
-        <div className="cursor-pointer self-end rounded-lg bg-pink-500 py-2 px-4 font-bold text-slate-100 transition hover:bg-pink-550">
-          See more
-        </div>
+        <Button className="self-end">See more</Button>
       </div>
     </div>
   )
