@@ -6,9 +6,19 @@ export type Film = {
   image: string
   movie_banner: string
   people: string[]
+  characters: Character[]
   release_date: string
   running_time: string
   rt_score: string
+}
+
+export type Character = {
+  id: string
+  name: string
+  gender?: string
+  age?: string
+  eye_color?: string
+  hair_color?: string
 }
 
 export async function getFilms(title?: string) {
@@ -26,5 +36,11 @@ export async function getFilmById(filmId: string) {
   )
   const film: Film = await response.json()
 
-  return film
+  const characters = await Promise.all(
+    film.people
+      .filter((url) => url !== 'https://ghibliapi.herokuapp.com/people/')
+      .map((url) => fetch(url).then((res) => res.json()))
+  )
+
+  return { ...film, characters }
 }
