@@ -1,4 +1,4 @@
-import { LoaderFunction, useLoaderData } from 'remix'
+import { LoaderFunction, Outlet, useLoaderData } from 'remix'
 import invariant from 'tiny-invariant'
 
 import { getFilmById } from '~/api/films'
@@ -25,6 +25,10 @@ export default function Film() {
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-2">
         <CharactersList characters={film.characters} />
+
+        <div className="col-span-2 lg:col-auto">
+          <Outlet />
+        </div>
       </div>
     </div>
   )
