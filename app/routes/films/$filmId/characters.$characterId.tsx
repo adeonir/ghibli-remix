@@ -1,4 +1,4 @@
-import { LoaderFunction, useLoaderData } from 'remix'
+import { LoaderFunction, useCatch, useLoaderData } from 'remix'
 import invariant from 'tiny-invariant'
 
 import { getCharacterById } from '~/api/films'
@@ -21,4 +21,14 @@ export default function Character() {
 
 export function ErrorBoundary({ error }: any) {
   return <CharacterDetails error={error} />
+}
+
+export function CatchBoundary() {
+  const caught = useCatch()
+
+  if (caught.status === 404) {
+    return <CharacterDetails caught={caught} />
+  }
+
+  throw new Error('Not found')
 }

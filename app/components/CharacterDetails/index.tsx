@@ -3,9 +3,10 @@ import type { Character } from '~/api/films'
 type Props = {
   character?: Character
   error?: any
+  caught?: any
 }
 
-export const CharacterDetails = ({ character, error }: Props) => {
+export const CharacterDetails = ({ character, error, caught }: Props) => {
   if (error) {
     return (
       <div>
@@ -14,7 +15,29 @@ export const CharacterDetails = ({ character, error }: Props) => {
         </h2>
 
         <div className="rounded-xl border-2 border-red-400 bg-slate-700 py-4 px-6 shadow-lg">
-          <h3 className="mb-4 text-2xl font-bold text-red-400">Not found</h3>
+          <h3 className="mb-4 text-2xl font-bold text-red-400">
+            Uhh... something went wrong
+          </h3>
+
+          <p className="text-lg text-slate-400">
+            Sorry, an unexpected error happened
+          </p>
+        </div>
+      </div>
+    )
+  }
+
+  if (caught) {
+    return (
+      <div>
+        <h2 className="mb-8 text-2xl font-bold text-teal-500">
+          Character details
+        </h2>
+
+        <div className="rounded-xl border-2 border-red-400 bg-slate-700 py-4 px-6 shadow-lg">
+          <h3 className="mb-4 text-2xl font-bold text-red-400">
+            {caught.statusText}
+          </h3>
 
           <p className="text-lg text-slate-400">Sorry, nothing to show here</p>
         </div>

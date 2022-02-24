@@ -53,7 +53,7 @@ export async function getCharacterById(
   )
 
   if (!response.ok) {
-    throw new Error(`Error fetching character ${characterId}`)
+    throw response
   }
 
   const character: Character = await response.json()
