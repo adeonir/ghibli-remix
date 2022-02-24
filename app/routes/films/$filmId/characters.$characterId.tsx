@@ -18,3 +18,7 @@ export default function Character() {
 
   return <CharacterDetails character={character} />
 }
+
+export function ErrorBoundary({ error }: any) {
+  return <CharacterDetails error={error} />
+}
