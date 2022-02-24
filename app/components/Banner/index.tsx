@@ -10,7 +10,7 @@ type Props = {
 
 export const Banner = ({ film }: Props) => {
   return (
-    <div className="relative flex h-72 w-full items-center justify-center overflow-hidden rounded-2xl shadow-lg md:h-96 lg:h-[32rem]">
+    <div className="relative flex h-72 w-full items-center justify-center overflow-hidden rounded-2xl shadow-xl md:h-96 lg:h-[32rem]">
       <div className="absolute flex h-full w-full flex-col items-start justify-between">
         <Link to="/films" className="ml-4 mt-4">
           <Button as="div" className="rounded-full px-3 py-3">

@@ -20,6 +20,7 @@ export default function Film() {
   return (
     <div className="space-y-8">
       <Banner film={film} />
+      <Header film={film} />
     </div>
   )
 }
