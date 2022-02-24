@@ -1,4 +1,5 @@
 import { Form, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
+
 import { getFilms } from '~/api/films'
 import { Button } from '~/components/Button'
 import { Card } from '~/components/Card'
@@ -24,9 +25,9 @@ export default function Index() {
   const films = useLoaderData<Film[]>()
 
   return (
-    <div className="mx-auto max-w-7xl p-16">
-      <div className="mb-8 flex flex-col items-center justify-between space-y-4 text-center md:flex-row md:space-y-0 md:text-left">
-        <h1 className="text-4xl font-bold text-pink-500">
+    <div className="mx-auto max-w-7xl">
+      <div className="mb-16 flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
+        <h1 className="text-4xl font-bold text-teal-500">
           Studio Ghibli Films
         </h1>
         <Form

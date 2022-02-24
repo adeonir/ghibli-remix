@@ -1,9 +1,11 @@
 import { LoaderFunction, useLoaderData } from 'remix'
 import invariant from 'tiny-invariant'
+
 import { getFilmById } from '~/api/films'
+import { Banner } from '~/components/Banner'
+import { Header } from '~/components/Header'
 
 import type { Film } from '~/api/films'
-import { Banner } from '~/components/Banner'
 
 export const loader: LoaderFunction = async ({ params }) => {
   invariant(params.filmId, 'filmId is required')
@@ -16,7 +18,7 @@ export default function Film() {
   const film = useLoaderData<Film>()
 
   return (
-    <div>
+    <div className="space-y-8">
       <Banner film={film} />
     </div>
   )

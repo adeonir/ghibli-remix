@@ -6,6 +6,10 @@ export type Film = {
   image: string
   movie_banner: string
   people: string[]
+  director: string
+  release_date: string
+  running_time: string
+  rt_score: string
 }
 
 export async function getFilms(title?: string) {
