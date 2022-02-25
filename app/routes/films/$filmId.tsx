@@ -1,4 +1,4 @@
-import { LoaderFunction, Outlet, useLoaderData } from 'remix'
+import { LoaderFunction, MetaFunction, Outlet, useLoaderData } from 'remix'
 import invariant from 'tiny-invariant'
 
 import { getFilmById } from '~/api/films'
@@ -7,6 +7,13 @@ import { Header } from '~/components/Header'
 import { CharactersList } from '~/components/CharactersList'
 
 import type { Film } from '~/api/films'
+
+export const meta: MetaFunction = ({ data }) => {
+  return {
+    title: `${data.title} | Studio Ghibli`,
+    description: data.description,
+  }
+}
 
 export const loader: LoaderFunction = async ({ params }) => {
   invariant(params.filmId, 'filmId is required')
