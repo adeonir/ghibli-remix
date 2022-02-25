@@ -1,6 +1,5 @@
-import { twMerge as cn } from 'tailwind-merge'
-
 import { InputHTMLAttributes } from 'react'
+import { twMerge as cn } from 'tailwind-merge'
 
 type Props = {
   className?: string
