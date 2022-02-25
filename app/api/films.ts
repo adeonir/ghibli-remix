@@ -1,3 +1,5 @@
+import { getComments } from '~/api/comments'
+
 import type { Film } from '~/types/films'
 import type { Character } from '~/types/characters'
 
@@ -22,7 +24,9 @@ export async function getFilmById(filmId: string) {
       .map((url) => fetch(url).then((res) => res.json()))
   )
 
-  return { ...film, characters }
+  const comments = await getComments(filmId)
+
+  return { ...film, characters, comments }
 }
 
 export async function getCharacterById(

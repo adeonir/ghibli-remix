@@ -5,6 +5,7 @@ import { getFilmById } from '~/api/films'
 import { Banner } from '~/components/Banner'
 import { Header } from '~/components/Header'
 import { CharactersList } from '~/components/CharactersList'
+import { CommentsList } from '~/components/CommentsList'
 
 import type { Film } from '~/types/films'
 
@@ -34,7 +35,11 @@ export default function Film() {
         <CharactersList characters={film.characters} />
 
         <div className="col-span-2 lg:col-auto">
-          <Outlet />
+          <div className="mb-8">
+            <Outlet />
+          </div>
+
+          <CommentsList filmId={film.id} comments={film.comments || []} />
         </div>
       </div>
     </div>
