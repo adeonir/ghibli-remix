@@ -1,7 +1,6 @@
-import { Link } from 'remix'
+import { LinkButton } from '~/components/LinkButton'
 
-import { Film } from '~/api/films'
-import { Button } from '~/components/Button'
+import type { Film } from '~/types/films'
 
 type Props = {
   film: Film
@@ -14,9 +13,9 @@ export const Card = ({ film }: Props) => {
 
       <div className="flex flex-1 flex-col justify-between space-y-4 p-6">
         <h2 className="text-xl font-bold text-slate-100">{film.title}</h2>
-        <Link to={film.id} prefetch="intent" className="self-end">
-          <Button as="div">See more</Button>
-        </Link>
+        <LinkButton to={film.id} prefetch="intent" className="self-end">
+          See more
+        </LinkButton>
       </div>
     </div>
   )
