@@ -1,7 +1,8 @@
 export type Comment = {
+  id: string
   name: string
-  avatar_url: string
+  avatarUrl: string
   message: string
-  created_at: Date
-  film_id: string
+  createdAt: Date
+  filmId: string
 }
