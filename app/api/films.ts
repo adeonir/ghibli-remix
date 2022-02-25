@@ -1,25 +1,5 @@
-export type Film = {
-  id: string
-  title: string
-  original_title: string
-  description: string
-  image: string
-  movie_banner: string
-  people: string[]
-  characters: Character[]
-  release_date: string
-  running_time: string
-  rt_score: string
-}
-
-export type Character = {
-  id: string
-  name: string
-  gender?: string
-  age?: string
-  eye_color?: string
-  hair_color?: string
-}
+import type { Film } from '~/types/films'
+import type { Character } from '~/types/characters'
 
 export async function getFilms(title?: string) {
   const response = await fetch('https://ghibliapi.herokuapp.com/films')

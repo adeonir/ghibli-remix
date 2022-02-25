@@ -6,7 +6,7 @@ import { Banner } from '~/components/Banner'
 import { Header } from '~/components/Header'
 import { CharactersList } from '~/components/CharactersList'
 
-import type { Film } from '~/api/films'
+import type { Film } from '~/types/films'
 
 export const meta: MetaFunction = ({ data }) => {
   return {
