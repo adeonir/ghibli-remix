@@ -2,9 +2,10 @@ import { LoaderFunction, useCatch, useLoaderData } from 'remix'
 import invariant from 'tiny-invariant'
 
 import { getCharacterById } from '~/api/films'
+
 import { CharacterDetails } from '~/components/CharacterDetails'
 
-import type { Character } from '~/api/films'
+import type { Character } from '~/types/characters'
 
 export const loader: LoaderFunction = async ({ params }) => {
   invariant(params.characterId, 'characterId is required')

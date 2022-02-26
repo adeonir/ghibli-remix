@@ -1,4 +1,4 @@
-import { Film } from '~/api/films'
+import type { Film } from '~/types/films'
 
 type Props = {
   film: Film

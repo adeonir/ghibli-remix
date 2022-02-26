@@ -8,13 +8,17 @@ import {
 } from 'remix'
 import invariant from 'tiny-invariant'
 import faker from '@faker-js/faker'
+import { validationError } from 'remix-validated-form'
 
 import { getFilmById } from '~/api/films'
 import { addComment } from '~/api/comments'
+
 import { Banner } from '~/components/Banner'
 import { Header } from '~/components/Header'
 import { CharactersList } from '~/components/CharactersList'
 import { CommentsList } from '~/components/CommentsList'
+
+import { commentSchema } from '~/validations/comments'
 
 import type { Film } from '~/types/films'
 import type { Comment } from '~/types/comments'
@@ -29,6 +33,12 @@ export const meta: MetaFunction = ({ data }) => {
 export const action: ActionFunction = async ({ request, params }) => {
   invariant(params.filmId, 'filmId is required')
   const body = await request.formData()
+
+  const values = await commentSchema.validate(body)
+
+  if (values.error) {
+    return validationError(values.error)
+  }
 
   const comment: Comment = {
     id: faker.datatype.uuid(),
@@ -63,9 +73,7 @@ export default function Film() {
         <CharactersList characters={film.characters} />
 
         <div className="col-span-2 lg:col-auto">
-          <div className="mb-8">
-            <Outlet />
-          </div>
+          <Outlet />
 
           <CommentsList filmId={film.id} comments={film.comments || []} />
         </div>

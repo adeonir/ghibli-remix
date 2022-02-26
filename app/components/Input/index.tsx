@@ -7,7 +7,7 @@ type Props = {
 
 export const Input = ({ className, ...props }: Props) => {
   const classNames = cn(
-    'w-full rounded-lg bg-slate-400 px-4 py-2 text-slate-800 placeholder:text-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500 disabled:cursor-not-allowed disabled:opacity-75',
+    'w-full rounded-lg bg-slate-600 px-4 py-3 text-slate-100 placeholder:text-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500',
     className
   )
 

@@ -1,4 +1,4 @@
-import type { Character } from '~/api/films'
+import type { Character } from '~/types/characters'
 
 type Props = {
   character?: Character
@@ -9,7 +9,7 @@ type Props = {
 export const CharacterDetails = ({ character, error, caught }: Props) => {
   if (error) {
     return (
-      <div>
+      <div className="mb-8">
         <h2 className="mb-8 text-2xl font-bold text-teal-500">
           Character details
         </h2>
@@ -29,7 +29,7 @@ export const CharacterDetails = ({ character, error, caught }: Props) => {
 
   if (caught) {
     return (
-      <div>
+      <div className="mb-8">
         <h2 className="mb-8 text-2xl font-bold text-teal-500">
           Character details
         </h2>
@@ -46,7 +46,7 @@ export const CharacterDetails = ({ character, error, caught }: Props) => {
   }
 
   return (
-    <div>
+    <div className="mb-8">
       <h2 className="mb-8 text-2xl font-bold text-teal-500">
         Character details
       </h2>
