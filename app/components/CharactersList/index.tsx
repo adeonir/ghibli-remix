@@ -7,15 +7,23 @@ type Props = {
 }
 
 export const CharactersList = ({ characters }: Props) => {
-  return (
-    <div>
-      <h2 className="mb-8 text-2xl font-bold text-teal-500">All characters</h2>
+  if (!characters.length) {
+    return (
+      <div>
+        <h2 className="mb-8 text-2xl font-bold text-teal-500">
+          All characters
+        </h2>
 
-      {!characters && (
         <div className="text-lg text-slate-400">
           Sorry, no characters listed in this film
         </div>
-      )}
+      </div>
+    )
+  }
+
+  return (
+    <div>
+      <h2 className="mb-8 text-2xl font-bold text-teal-500">All characters</h2>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
         {characters.map((character) => (
