@@ -46,18 +46,20 @@ export const CommentsList = ({ filmId, comments }: Props) => {
             key={comment.id}
             className="mb-6 border-b border-slate-700 pb-6 last:mb-0 last:border-0 last:pb-0"
           >
-            <div className="mb-4 flex items-center">
+            <div className="mb-4 flex items-center gap-4">
               <img
                 src={comment.avatarUrl}
                 alt={comment.name}
                 className="h-9 w-9 rounded-full"
               />
-              <p className="ml-4 text-lg font-bold text-slate-300">
-                {comment.name}
-              </p>
-              <span className="ml-auto text-base font-semibold text-slate-500">
-                {dateFormat(comment.createdAt)}
-              </span>
+              <div className="flex flex-1 flex-col sm:flex-row sm:justify-between">
+                <p className="text-lg font-bold text-slate-300">
+                  {comment.name}
+                </p>
+                <span className="text-base font-semibold text-slate-500">
+                  {dateFormat(comment.createdAt)}
+                </span>
+              </div>
             </div>
             <p className="text-base text-slate-100">{comment.message}</p>
           </div>
