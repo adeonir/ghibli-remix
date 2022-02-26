@@ -7,7 +7,7 @@ type Props = {
   className?: string
 } & TextareaHTMLAttributes<HTMLTextAreaElement>
 
-export const ValidatedTextArea = ({ name, className, ...props }: Props) => {
+export function TextArea({ name, className, ...props }: Props) {
   const { error, getInputProps } = useField(name)
 
   const classNames = cn(

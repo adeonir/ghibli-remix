@@ -1,8 +1,8 @@
 import { ValidatedForm } from 'remix-validated-form'
 
-import { ValidatedButton } from '~/components/ValidatedButton'
-import { ValidatedInput } from '~/components/ValidatedInput'
-import { ValidatedTextArea } from '~/components/ValidatedTextArea'
+import { TextField } from '~/components/Form/TextField'
+import { TextArea } from '~/components/Form/TextArea'
+import { SubmitButton } from '~/components/Form/SubmitButton'
 
 import { commentSchema } from '~/validations/comments'
 
@@ -13,7 +13,7 @@ type Props = {
   comments: Comment[]
 }
 
-export const CommentsList = ({ filmId, comments }: Props) => {
+export function CommentsList({ filmId, comments }: Props) {
   const dateFormat = (date: Date) =>
     new Intl.DateTimeFormat('en', {
       day: 'numeric',
@@ -31,13 +31,13 @@ export const CommentsList = ({ filmId, comments }: Props) => {
         validator={commentSchema}
         className="flex flex-col gap-4"
       >
-        <ValidatedInput name="name" placeholder="Name" className="flex-1" />
-        <ValidatedTextArea
+        <TextField name="name" placeholder="Name" className="flex-1" />
+        <TextArea
           name="message"
           placeholder="Message"
           className="flex-1 bg-slate-600 text-slate-100 placeholder:text-slate-400 disabled:text-slate-300"
         />
-        <ValidatedButton className="h-12 w-36 self-end" />
+        <SubmitButton className="h-12 w-36 self-end" />
       </ValidatedForm>
 
       <div className="rounded-xl border-2 border-slate-600 p-6">

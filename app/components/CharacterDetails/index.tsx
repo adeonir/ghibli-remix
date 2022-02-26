@@ -6,7 +6,7 @@ type Props = {
   caught?: any
 }
 
-export const CharacterDetails = ({ character, error, caught }: Props) => {
+export function CharacterDetails({ character, error, caught }: Props) {
   if (error) {
     return (
       <div className="mb-8">

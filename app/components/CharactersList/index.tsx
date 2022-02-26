@@ -6,7 +6,7 @@ type Props = {
   characters: Character[]
 }
 
-export const CharactersList = ({ characters }: Props) => {
+export function CharactersList({ characters }: Props) {
   if (!characters.length) {
     return (
       <div>

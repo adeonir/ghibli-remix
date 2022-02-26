@@ -7,7 +7,7 @@ type Props = {
   className?: string
 } & InputHTMLAttributes<HTMLInputElement>
 
-export const ValidatedInput = ({ name, className, ...props }: Props) => {
+export function TextField({ name, className, ...props }: Props) {
   const { error, getInputProps } = useField(name)
 
   const classNames = cn(

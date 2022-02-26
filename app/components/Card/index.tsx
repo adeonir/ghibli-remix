@@ -6,7 +6,7 @@ type Props = {
   film: Film
 }
 
-export const Card = ({ film }: Props) => {
+export function Card({ film }: Props) {
   return (
     <div className="flex flex-col rounded-2xl bg-slate-700 shadow-xl">
       <img src={film.image} alt={film.title} className="rounded-t-2xl" />

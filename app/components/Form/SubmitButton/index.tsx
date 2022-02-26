@@ -5,7 +5,7 @@ type Props = {
   className?: string
 }
 
-export const ValidatedButton = ({ className }: Props) => {
+export function SubmitButton({ className }: Props) {
   const isSubmitting = useIsSubmitting()
   const { isValid } = useFormContext()
 
