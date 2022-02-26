@@ -1,7 +1,10 @@
-import { Form, useTransition } from 'remix'
+import { ValidatedForm } from 'remix-validated-form'
 
-import { Button } from '~/components/Button'
-import { Input } from '~/components/Input'
+import { ValidatedButton } from '~/components/ValidatedButton'
+import { ValidatedInput } from '~/components/ValidatedInput'
+import { ValidatedTextArea } from '~/components/ValidatedTextArea'
+
+import { commentSchema } from '~/validations/comments'
 
 import type { Comment } from '~/types/comments'
 
@@ -10,10 +13,7 @@ type Props = {
   comments: Comment[]
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const CommentsList = ({ filmId, comments }: Props) => {
-  const transition = useTransition()
-
   const dateFormat = (date: Date) =>
     new Intl.DateTimeFormat('en', {
       day: 'numeric',
@@ -25,27 +25,20 @@ export const CommentsList = ({ filmId, comments }: Props) => {
     <div className="space-y-8">
       <h2 className="text-2xl font-bold text-teal-500">Comments</h2>
 
-      <Form method="post" className="flex gap-4">
-        <Input
-          name="name"
-          placeholder="Name"
-          disabled={transition.state === 'submitting'}
-          className="h-12 flex-1 bg-slate-600 text-slate-100 placeholder:text-slate-400 disabled:text-slate-300"
-        />
-        <Input
+      <ValidatedForm
+        method="post"
+        action={`/films/${filmId}`}
+        validator={commentSchema}
+        className="flex flex-col gap-4"
+      >
+        <ValidatedInput name="name" placeholder="Name" className="flex-1" />
+        <ValidatedTextArea
           name="message"
           placeholder="Message"
-          disabled={transition.state === 'submitting'}
-          className="h-12 flex-1 bg-slate-600 text-slate-100 placeholder:text-slate-400 disabled:text-slate-300"
+          className="flex-1 bg-slate-600 text-slate-100 placeholder:text-slate-400 disabled:text-slate-300"
         />
-        <Button
-          type="submit"
-          className="h-12 w-32 px-6"
-          disabled={transition.state === 'submitting'}
-        >
-          {transition.state === 'submitting' ? 'Sending...' : 'Send'}
-        </Button>
-      </Form>
+        <ValidatedButton className="h-12 w-36 self-end" />
+      </ValidatedForm>
 
       <div className="rounded-xl border-2 border-slate-600 p-6">
         {comments.map((comment) => (

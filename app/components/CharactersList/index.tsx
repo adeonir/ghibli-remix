@@ -1,6 +1,6 @@
 import { NavLink } from 'remix'
 
-import type { Character } from '~/api/films'
+import type { Character } from '~/types/characters'
 
 type Props = {
   characters: Character[]

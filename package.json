@@ -17,10 +17,12 @@
   "dependencies": {
     "@remix-run/react": "1.2.2",
     "@remix-run/serve": "1.2.2",
+    "@remix-validated-form/with-yup": "2.0.1",
     "cross-env": "7.0.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "remix": "1.2.2"
+    "remix": "1.2.2",
+    "remix-validated-form": "4.1.4"
   },
   "devDependencies": {
     "@faker-js/faker": "6.0.0-alpha.7",
@@ -43,7 +45,8 @@
     "tailwind-merge": "1.2.0",
     "tailwindcss": "3.0.23",
     "tiny-invariant": "1.2.0",
-    "typescript": "4.5.5"
+    "typescript": "4.5.5",
+    "yup": "0.32.11"
   },
   "engines": {
     "node": ">=14"
