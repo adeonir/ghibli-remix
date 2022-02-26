@@ -1,3 +1,5 @@
+import 'dotenv/config'
+
 import { getComments } from '~/api/comments'
 
 import type { Film } from '~/types/films'
@@ -18,7 +20,7 @@ export async function getFilmById(filmId: string) {
 
   const characters = await Promise.all(
     film.people
-      .filter((url) => url !== `${process.env.GHIBLI_API}/people`)
+      .filter((url) => url !== `${process.env.GHIBLI_API}/people/`)
       .map((url) => fetch(url).then((res) => res.json()))
   )
 

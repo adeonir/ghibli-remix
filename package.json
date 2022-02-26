@@ -5,13 +5,12 @@
   "license": "",
   "sideEffects": false,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development concurrently 'npm:dev:css' 'remix dev' 'npm:json-server'",
+    "dev": "cross-env NODE_ENV=development concurrently 'npm:dev:css' 'remix dev'",
     "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css --watch",
     "build": "cross-env NODE_ENV=production npm run build:css && remix build",
     "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
     "start": "cross-env NODE_ENV=production remix-serve build",
     "lint": "eslint app --max-warnings=0 && prettier app --write",
-    "json-server": "json-server --watch db.json --port 3001",
     "postinstall": "remix setup node"
   },
   "dependencies": {
@@ -34,12 +33,12 @@
     "@typescript-eslint/parser": "5.12.1",
     "autoprefixer": "10.4.2",
     "concurrently": "7.0.0",
+    "dotenv": "16.0.0",
     "eslint": "8.9.0",
     "eslint-config-prettier": "8.4.0",
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
-    "json-server": "0.17.0",
     "postcss": "8.4.6",
     "prettier": "2.5.1",
     "prettier-plugin-tailwindcss": "0.1.7",

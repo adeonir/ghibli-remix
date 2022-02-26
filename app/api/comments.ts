@@ -1,3 +1,5 @@
+import 'dotenv/config'
+
 import type { Comment } from '~/types/comments'
 
 export async function getComments(filmId: string) {
