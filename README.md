@@ -4,6 +4,8 @@ A small project, based on this [Remix.run crash course](https://www.youtube.com/
 
 You can see the demo [here](https://remix-ghibli-adeonir.vercel.app).
 
+I've create a simple design for this project, you can view it [here](https://www.figma.com/file/TJbiqMb4Ha3OEDskctRyVm/Studio-Ghibli/duplicate).
+
 ## How to use
 
 1. Download this repo:
