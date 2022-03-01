@@ -1,53 +1,46 @@
-# Welcome to Remix!
+# Welcome to Studio Ghibli Films
 
-- [Remix Docs](https://remix.run/docs)
+A small project, based on this [Remix.run crash course](https://www.youtube.com/watch?v=HOlYQu_r4Io), using the [Ghibli API](https://ghibliapi.herokuapp.com).
 
-## Development
+You can see the demo [here](https://remix-ghibli-adeonir.vercel.app).
 
-From your terminal:
+## How to use
+
+1. Download this repo:
+
+```bash
+npx degit adeonir/remix-ghibli remix-ghibli
+```
+
+2. Install dependencies:
+
+```sh
+npm install
+```
+
+2. Add `.env` file:
+
+```sh
+cp .env.example .env
+```
+
+3. Run the server:
 
 ```sh
 npm run dev
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
+This starts your app in development mode, running at `http://localhost:3000` and a json-server at `http://localhost:3001`.
 
-## Deployment
+The json-server is used to mock the comments API locally.
 
-First, build your app for production:
+### What's inside
 
-```sh
-npm run build
-```
+- [Remix](https://remix.run)
+- [ReactJS](https://reactjs.org)
+- [TypeScript](https://www.typescriptlang.org)
+- [Tailwind CSS](https://tailwindcss.com)
 
-Then run the app in production mode:
+---
 
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
+Made with ♥️ by Adeonir Kohl
