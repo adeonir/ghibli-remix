@@ -32,7 +32,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-slate-750 px-8 py-16 lg:p-16">
+      <body className="min-h-screen bg-slate-750 px-8 py-16 lg:p-16">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
