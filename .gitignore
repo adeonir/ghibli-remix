@@ -1,9 +1,18 @@
+# dependencies
 node_modules
 
+# misc
+.DS_Store
+
+# testing
+coverage
+
+# build
 .cache
 .vercel
 .output
 
+# remix
 /api
 /build
 /public/build
