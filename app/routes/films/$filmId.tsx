@@ -66,7 +66,8 @@ export default function Film() {
 
   return (
     <div className="space-y-8">
-      <Banner film={film} />
+      <Banner title={film.title} image={film.movie_banner} />
+
       <Header film={film} />
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-2">
