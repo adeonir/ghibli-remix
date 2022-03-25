@@ -1,9 +1,11 @@
+import { ThrownResponse } from 'remix'
+
 import type { Character } from '~/types/characters'
 
-type Props = {
+export type Props = {
   character?: Character
-  error?: any
-  caught?: any
+  error?: Error
+  caught?: ThrownResponse
 }
 
 export function CharacterDetails({ character, error, caught }: Props) {
@@ -15,13 +17,9 @@ export function CharacterDetails({ character, error, caught }: Props) {
         </h2>
 
         <div className="rounded-xl border-2 border-red-400 bg-slate-700 py-4 px-6 shadow-lg">
-          <h3 className="mb-4 text-2xl font-bold text-red-400">
-            Uhh... something went wrong
-          </h3>
+          <h3 className="mb-4 text-2xl font-bold text-red-400">{error.name}</h3>
 
-          <p className="text-lg text-slate-400">
-            Sorry, an unexpected error happened
-          </p>
+          <p className="text-lg text-slate-400">{error.message}</p>
         </div>
       </div>
     )
@@ -35,9 +33,7 @@ export function CharacterDetails({ character, error, caught }: Props) {
         </h2>
 
         <div className="rounded-xl border-2 border-red-400 bg-slate-700 py-4 px-6 shadow-lg">
-          <h3 className="mb-4 text-2xl font-bold text-red-400">
-            {caught.statusText}
-          </h3>
+          <h3 className="mb-4 text-2xl font-bold text-red-400">Not found</h3>
 
           <p className="text-lg text-slate-400">Sorry, nothing to show here</p>
         </div>
