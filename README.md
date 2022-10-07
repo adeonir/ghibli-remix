@@ -20,7 +20,7 @@ You can see the demo [here](https://remix-ghibli-adeonir.vercel.app).
   <img src=".github/page-screenshot.png" atl="Film page" />
 </p>
 
-## How to use
+## Getting Started
 
 1. Download this repo:
 
@@ -30,8 +30,10 @@ npx degit adeonir/remix-ghibli remix-ghibli
 
 2. Install dependencies:
 
+> Before anything, you need to have [pnpm](https://pnpm.io/) installed on your machine.
+
 ```sh
-yarn install
+pnpm install
 ```
 
 2. Add `.env` file:
@@ -43,12 +45,18 @@ cp .env.example .env
 3. Run the server:
 
 ```sh
-yarn dev
+pnpm dev
 ```
 
 This starts your app in development mode, running at `http://localhost:3000` and a json-server at `http://localhost:3001`.
 
 The json-server is used to mock the comments API locally.
+
+4. In a separate terminal, run the tests:
+
+```bash
+pnpm watch
+```
 
 ### What's inside
 

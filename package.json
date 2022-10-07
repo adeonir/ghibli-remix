@@ -12,7 +12,7 @@
     "start": "cross-env NODE_ENV=production remix-serve build",
     "lint": "eslint app --max-warnings=0 && prettier app --write",
     "test": "jest --maxWorkers=50%",
-    "test:watch": "jest --watch --maxWorkers=25%",
+    "watch": "jest --watch --maxWorkers=25%",
     "postinstall": "remix setup node",
     "json-server": "json-server --watch db.json --port 3001"
   },
