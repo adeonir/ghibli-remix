@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom'
 
 import { GhibliLogo } from '.'
 
-describe('<Input />', () => {
+describe('<GhibliLogo />', () => {
   it(`should render correctly`, () => {
     const { container } = render(<GhibliLogo />, {
       wrapper: MemoryRouter,
