@@ -1,6 +1,6 @@
 import type { Film } from '~/types/films'
 
-type Props = {
+export type Props = {
   film: Film
 }
 
