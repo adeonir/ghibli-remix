@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom'
 
 import { LinkButton } from '.'
 
-describe('<Input />', () => {
+describe('<LinkButton />', () => {
   it(`should render correctly`, () => {
     const { container } = render(
       <LinkButton to="pathname">Children text</LinkButton>,
