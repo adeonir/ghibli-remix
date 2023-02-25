@@ -1,7 +1,7 @@
 {
-  "name": "remix-app-template",
+  "name": "ghibli-remix",
   "private": true,
-  "description": "",
+  "description": "A small project to list movies using the Ghibli API",
   "license": "",
   "sideEffects": false,
   "scripts": {
